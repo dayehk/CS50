@@ -1,0 +1,41 @@
+-open file
+-update outfile's header info
+-read infile's scanline, pixel by pixel
+-resize horizontally
+remeber padding!
+resize vertically
+
+
+for resizing horizontally
+
+for each row
+    for each pixel in row
+        for n times
+            write to outfile
+    write outfile's padding
+    skip over infile's padding
+
+resize vertically
+1. rewrite methods
+    remeber pixels in an array
+    write array as many times as needed
+
+    for each row
+        for each pixel
+            write to array n times
+        for n times
+            write array to outfile
+            write outflie padding
+        skip over infile padding
+
+2. re-copy methods
+    go back to the start of the original scanline
+    re-scale scanline
+
+    for each row
+        for n-1 times
+            write pixels, padding to outfile
+            send infile cursor back
+        write pixels, padding to outfile
+        skip over infile padding
+
